@@ -1,3 +1,7 @@
+""" Contiene ratios para analizar la salud financiera de una 
+empresa (analisis fundamental)
+"""
+
 def SHARP(RentabilidadActivo: float, RentabilidadLibreRiesgo: float, Volatilidad: float) -> float:
     """
     Calcula el índice de Sharpe, una medida de rentabilidad ajustada al riesgo.

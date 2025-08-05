@@ -1,0 +1,1 @@
+"""Módulos para calcular ratios y métricas de riesgo/rentabilidad."""

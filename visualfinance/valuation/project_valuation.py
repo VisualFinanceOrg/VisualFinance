@@ -1,3 +1,4 @@
+"""Métricas para decidir si un proyecto de inversión es viable."""
 
 def VAN(Flujos: list[float], TasaDescuento: float) -> float:
     """
@@ -48,3 +49,16 @@ def WACC(Ke: float, E: float, Kd: float, D: float, Tc: float) -> float:
     """
     V = E + D
     return ((E / V) * Ke + (D / V) * Kd * (1 - Tc)) * 100
+
+def PAYBACK(InversionInicial: float, FlujoCajaAnual: float) -> float:
+    """
+    Calcula el período de recuperación (Payback) de una inversión.
+
+    Args:
+        InversionInicial (float): Monto total invertido al inicio del proyecto.
+        FlujoCajaAnual (float): Flujo de caja generado por año.
+
+    Returns:
+        float: Años necesarios para recuperar la inversión inicial. No tiene en cuenta el valor del dinero en el tiempo.
+    """
+    return InversionInicial / FlujoCajaAnual
