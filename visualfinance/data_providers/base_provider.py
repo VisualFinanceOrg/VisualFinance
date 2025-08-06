@@ -7,15 +7,10 @@ from typing import List
 class BaseDataProvider(ABC):
     """
     Clase Base Abstracta (ABC) para todos los proveedores de datos.
-
-    Define un contrato estricto: cualquier clase que herede de esta
-    debe implementar el método `get_prices`. Esto garantiza que,
-    independientemente de la fuente de datos (Yahoo Finance, una base de datos local, etc.),
-    el resto de la aplicación siempre recibirá un DataFrame con una estructura predecible.
     """
 
     @abstractmethod
-    def get_prices(self, tickers: List[str], start_date: str, end_date: str) -> pd.DataFrame:
+    def get_prices(self, tickers: List[str], start_date: str, end_date: str, **kwargs) -> pd.DataFrame:
         """
         Obtiene los precios de cierre ajustados para una lista de tickers en un rango de fechas.
 

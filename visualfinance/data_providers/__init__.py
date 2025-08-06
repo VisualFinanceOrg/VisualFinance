@@ -1,1 +1,1 @@
-"""Módulos para obtener datos de diversas fuentes."""
+from .yahoo_provider import YahooFinanceDataProvider
