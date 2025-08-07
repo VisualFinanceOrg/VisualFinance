@@ -13,7 +13,7 @@ __all__ = [
 ]
 
 
-def value_at_risk_historical(df: pd.DataFrame, alpha: Union[float, List[float]] = 0.05) -> pd.DataFrame:
+def value_at_risk_historical(df: pd.DataFrame, alpha: Union[float, List[float]] = 0.05, method:str="lower") -> pd.DataFrame:
     """
     Calcula el Valor en Riesgo (VaR) utilizando simulación histórica.
 
@@ -26,7 +26,7 @@ def value_at_risk_historical(df: pd.DataFrame, alpha: Union[float, List[float]] 
     """
     alphas = [alpha] if isinstance(alpha, float) else alpha
     result = {
-        a: df.apply(lambda x: np.percentile(x, a, method='lower'))
+        a: df.apply(lambda x: np.percentile(x, a, method=method))
         for a in alphas
     }
     result = pd.DataFrame(result)
